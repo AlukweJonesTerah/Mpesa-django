@@ -1,6 +1,5 @@
-from datetime import datetime
 import requests
-
+from requests.auth import HTTPBasicAuth
 import keys
 from access_token import generate_access_token
 from mpesa_encode import generate_password
@@ -29,7 +28,8 @@ def lipa_na_mpesa():
         "PartyA": keys.phone_number,
         "PartyB": keys.business_shortCode,
         "PhoneNumber": keys.phone_number,
-        "CallBackURL": "https://mydomain.com/pat",
+        # replace with an actual url link(callBackUrl)
+        "CallBackURL": "https://mydomain.com/api/payments",
         "AccountReference": "7211222",
         "TransactionDesc": "Test",
     }
